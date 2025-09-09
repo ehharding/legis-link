@@ -1,0 +1,312 @@
+[
+  {
+    "code": "ar",
+    "localName": "العربية",
+    "name": "Arabic",
+    "langDir": "rtl",
+    "dateFormat": "YYYY.MM.DD",
+    "hreflang": "ar",
+    "enabled": false,
+    "default": false
+  },
+  {
+    "code": "bn",
+    "localName": "বাংলা",
+    "name": "Bengali",
+    "langDir": "ltr",
+    "dateFormat": "DD.MM.YYYY",
+    "hreflang": "bn",
+    "enabled": false,
+    "default": false
+  },
+  {
+    "code": "de",
+    "localName": "Deutsch",
+    "name": "German",
+    "langDir": "ltr",
+    "dateFormat": "DD.MM.YYYY",
+    "hreflang": "de",
+    "enabled": false,
+    "default": false
+  },
+  {
+    "code": "el",
+    "localName": "Ελληνικά",
+    "name": "Greek",
+    "langDir": "ltr",
+    "dateFormat": "DD/MM/YYYY",
+    "hreflang": "el-GR",
+    "enabled": false,
+    "default": false
+  },
+  {
+    "code": "en",
+    "localName": "English",
+    "name": "English",
+    "langDir": "ltr",
+    "dateFormat": "MM.DD.YYYY",
+    "hreflang": "en-US",
+    "enabled": true,
+    "default": true
+  },
+  {
+    "code": "es",
+    "localName": "Español",
+    "name": "Spanish",
+    "langDir": "ltr",
+    "dateFormat": "DD.MM.YYYY",
+    "hreflang": "es-ES",
+    "enabled": true,
+    "default": false
+  },
+  {
+    "code": "fa",
+    "localName": "فارسی",
+    "name": "Persian",
+    "langDir": "rtl",
+    "dateFormat": "YYYY/MM/DD",
+    "hreflang": "fa",
+    "enabled": false,
+    "default": false
+  },
+  {
+    "code": "fi",
+    "localName": "Suomi",
+    "name": "Finnish",
+    "langDir": "ltr",
+    "dateFormat": "DD.MM.YYYY",
+    "hreflang": "fi",
+    "enabled": false,
+    "default": false
+  },
+  {
+    "code": "fr",
+    "localName": "Français",
+    "name": "French",
+    "langDir": "ltr",
+    "dateFormat": "DD.MM.YYYY",
+    "hreflang": "fr",
+    "enabled": true,
+    "default": false
+  },
+  {
+    "code": "he",
+    "localName": "עִברִית",
+    "name": "Hebrew",
+    "langDir": "rtl",
+    "dateFormat": "DD-MM-YYYY",
+    "hreflang": "he",
+    "enabled": false,
+    "default": false
+  },
+  {
+    "code": "hi",
+    "localName": "हिन्दी",
+    "name": "Hindi",
+    "langDir": "ltr",
+    "dateFormat": "DD/MM/YYYY",
+    "hreflang": "hi",
+    "enabled": false,
+    "default": false
+  },
+  {
+    "code": "id",
+    "localName": "Bahasa Indonesia",
+    "name": "Indonesian",
+    "langDir": "ltr",
+    "dateFormat": "DD.MM.YYYY",
+    "hreflang": "id",
+    "enabled": true,
+    "default": false
+  },
+  {
+    "code": "it",
+    "localName": "Italiano",
+    "name": "Italian",
+    "langDir": "ltr",
+    "dateFormat": "DD.MM.YYYY",
+    "hreflang": "it",
+    "enabled": false,
+    "default": false
+  },
+  {
+    "code": "ja",
+    "localName": "日本語",
+    "name": "Japanese",
+    "langDir": "ltr",
+    "dateFormat": "YYYY.MM.DD",
+    "hreflang": "ja",
+    "enabled": true,
+    "default": false
+  },
+  {
+    "code": "ka",
+    "localName": "ქართული",
+    "name": "Georgian",
+    "langDir": "ltr",
+    "dateFormat": "DD.MM.YYYY",
+    "hreflang": "ka",
+    "enabled": false,
+    "default": false
+  },
+  {
+    "code": "ko",
+    "localName": "한국어",
+    "name": "Korean",
+    "langDir": "ltr",
+    "dateFormat": "YYYY.MM.DD",
+    "hreflang": "ko",
+    "enabled": true,
+    "default": false
+  },
+  {
+    "code": "mn",
+    "localName": "Монгол",
+    "name": "Mongolian",
+    "langDir": "ltr",
+    "dateFormat": "YYYY.MM.DD",
+    "hreflang": "mn",
+    "enabled": false,
+    "default": false
+  },
+  {
+    "code": "nl",
+    "localName": "Nederlands",
+    "name": "Dutch",
+    "langDir": "ltr",
+    "dateFormat": "DD-MM-YYYY",
+    "hreflang": "nl",
+    "enabled": false,
+    "default": false
+  },
+  {
+    "code": "pl",
+    "localName": "Polski",
+    "name": "Polish",
+    "langDir": "ltr",
+    "dateFormat": "DD/MM/YYYY",
+    "hreflang": "pl",
+    "enabled": false,
+    "default": false
+  },
+  {
+    "code": "pt-br",
+    "localName": "Português do Brasil",
+    "name": "Brazilian Portuguese",
+    "langDir": "ltr",
+    "dateFormat": "DD.MM.YYYY",
+    "hreflang": "",
+    "enabled": false,
+    "default": false
+  },
+  {
+    "code": "pt",
+    "localName": "Português",
+    "name": "Português",
+    "langDir": "ltr",
+    "dateFormat": "MM.DD.YYYY",
+    "hreflang": "pt",
+    "enabled": true,
+    "default": false
+  },
+  {
+    "code": "ro",
+    "localName": "Română",
+    "name": "Romanian",
+    "langDir": "ltr",
+    "dateFormat": "DD-MM-YYYY",
+    "hreflang": "ro",
+    "enabled": false,
+    "default": false
+  },
+  {
+    "code": "ru",
+    "localName": "Русский",
+    "name": "Russian",
+    "langDir": "ltr",
+    "dateFormat": "DD.MM.YYYY",
+    "hreflang": "ru",
+    "enabled": false,
+    "default": false
+  },
+  {
+    "code": "sr",
+    "localName": "Srpski",
+    "name": "Serbian",
+    "langDir": "ltr",
+    "dateFormat": "DD.MM.YYYY",
+    "hreflang": "sr",
+    "enabled": false,
+    "default": false
+  },
+  {
+    "code": "sv",
+    "localName": "Svenska",
+    "name": "Swedish",
+    "langDir": "ltr",
+    "dateFormat": "YYYY-MM-DD",
+    "hreflang": "sv",
+    "enabled": false,
+    "default": false
+  },
+  {
+    "code": "tr",
+    "localName": "Türkçe",
+    "name": "Turkish",
+    "langDir": "ltr",
+    "dateFormat": "DD.MM.YYYY",
+    "hreflang": "tr",
+    "enabled": true,
+    "default": false
+  },
+  {
+    "code": "uk",
+    "localName": "Українська",
+    "name": "Ukrainian",
+    "langDir": "ltr",
+    "dateFormat": "DD.MM.YYYY",
+    "hreflang": "uk",
+    "enabled": true,
+    "default": false
+  },
+  {
+    "code": "ur",
+    "localName": "اردو",
+    "name": "Urdu",
+    "langDir": "rtl",
+    "dateFormat": "DD/MM/YYYY",
+    "hreflang": "ur",
+    "enabled": false,
+    "default": false
+  },
+  {
+    "code": "uz",
+    "localName": "O'zbek",
+    "name": "Uzbek",
+    "langDir": "ltr",
+    "dateFormat": "DD.MM.YYYY",
+    "hreflang": "uz",
+    "enabled": false,
+    "default": false
+  },
+  {
+    "code": "zh-cn",
+    "localName": "简体中文",
+    "name": "Simplified Chinese",
+    "langDir": "ltr",
+    "dateFormat": "YYYY/MM/DD",
+    "hreflang": "zh-Hans",
+    "enabled": true,
+    "default": false
+  },
+  {
+    "code": "zh-tw",
+    "localName": "繁體中文",
+    "name": "Traditional Chinese",
+    "langDir": "ltr",
+    "dateFormat": "YYYY/MM/DD",
+    "hreflang": "zh-Hant",
+    "enabled": true,
+    "default": false
+  }
+]

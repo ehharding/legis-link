@@ -1,0 +1,24 @@
+{
+  "name": "@legis-link/eslint-config",
+  "version": "0.0.0",
+  "type": "module",
+  "exports": {
+    "./*": [
+      "./src/*",
+      "./src/*.mjs",
+      "./src/*.json"
+    ],
+    ".": "./src/ts-shared.js"
+  },
+  "main": "./src/ts-shared.js",
+  "module": "./src/ts-shared.js",
+  "scripts": {
+    "lint": "node --run lint:js",
+    "lint:fix": "node --run lint:js:fix",
+    "lint:js": "eslint \"**/*.{js,mjs}\"",
+    "lint:js:fix": "node --run lint:js -- --fix"
+  },
+  "dependencies": {
+    "typescript-eslint": "catalog:"
+  }
+}

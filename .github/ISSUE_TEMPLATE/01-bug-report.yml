@@ -1,0 +1,48 @@
+name: Report A Technical/Visual Issue On The Legis Link Website
+description: 'Is something not working as expected? Did you encounter a bug or glitch with the website?'
+labels: [Bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting an issue you've found on the Legis Link website! Please fill in the template below. If you
+        are unsure about something, just do the best that you can. If you're reporting a visual bug, it will be much
+        easier for us to fix it when you attach a screenshot as well.
+  - type: input
+    attributes:
+      label: 'URL:'
+      description: The URL Of The Page You're Reporting An Issue On
+      placeholder: https://legis-link.com/en/
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: 'Browser Name:'
+      description: The Name Of The Web Browser You're Using
+      placeholder: Firefox
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: 'Browser Version:'
+      description: The Version Number Of The Web Browser You're Using
+      placeholder: '142.0.1 (64-Bit)'
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: 'Operating System:'
+      description: The Operation System You're Using (Please Write It In Full, With Version Number)
+      placeholder: 'Windows 11 Pro, 24H2, 26100.4946'
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: 'How To Reproduce The Issue:'
+      placeholder: |
+        1. What I Did
+        2. What I Expected To Happen
+        3. What I Actually Got
+        4. If Possible, Images Or Videos Are Welcome
+    validations:
+      required: true

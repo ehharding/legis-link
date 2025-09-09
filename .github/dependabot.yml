@@ -1,0 +1,94 @@
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+      day: 'friday'
+      time: '17:00'
+      timezone: 'America/Chicago'
+    labels:
+      - 'github_actions:pull-request'
+    commit-message:
+      prefix: meta
+    open-pull-requests-limit: 10
+
+  - package-ecosystem: npm
+    directory: '/'
+    versioning-strategy: increase
+    schedule:
+      interval: 'weekly'
+      day: 'friday'
+      time: '17:00'
+      timezone: 'America/Chicago'
+    labels:
+      - 'github_actions:pull-request'
+    commit-message:
+      prefix: meta
+    groups:
+      lint:
+        patterns:
+          - '@eslint/*'
+          - '@typescript-eslint/*'
+          - eslint
+          - eslint-*
+          - lint-staged
+          - prettier
+          - prettier-*
+          - stylelint
+          - stylelint-*
+          - typescript-eslint
+          - unified
+        exclude-patterns:
+          - 'eslint-plugin-storybook'
+          - 'prettier-plugin-tailwindcss'
+      mdx:
+        patterns:
+          - '@mdx-js/*'
+          - '@vcarl/remark-headings'
+          - hast-util-*
+          - reading-time
+          - rehype-*
+          - remark-*
+          - sval
+          - unist-util-*
+          - vfile
+          - vfile-*
+      radix:
+        patterns:
+          - '@radix-ui/*'
+      react:
+        patterns:
+          - '@types/react'
+          - 'react'
+          - 'react-dom'
+      storybook:
+        patterns:
+          - '@storybook/*'
+          - 'eslint-plugin-storybook'
+          - 'storybook'
+      styling:
+        patterns:
+          - '@savvywombat/tailwindcss-grid-areas'
+          - '@tailwindcss/*'
+          - 'prettier-plugin-tailwindcss'
+          - 'tailwindcss'
+      testing:
+        patterns:
+          - '@reporters/*'
+          - '@testing-library/*'
+          - global-jsdom
+          - jsdom
+          - tsx
+      vercel:
+        patterns:
+          - '@next/*'
+          - '@opentelemetry/*'
+          - '@vercel/*'
+          - next
+          - next-*
+          - turbo
+    ignore:
+      - dependency-name: '@types/node'
+        update-types: ['version-update:semver-major']
+    open-pull-requests-limit: 10

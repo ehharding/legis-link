@@ -1,0 +1,35 @@
+# Website Development
+* @ehharding
+
+# Infrastructure
+.github @ehharding
+.husky @ehharding
+codecov.yml @ehharding
+
+# Dependencies
+pnpm-lock.yaml @ehharding
+pnpm-workspace.yml @ehharding
+
+# Framework
+apps/site/navigation.mjs @ehharding
+apps/site/next.config.mjs @ehharding
+apps/site/next.dynamic.mjs @ehharding
+apps/site/middleware.ts @ehharding
+apps/site/playwright.config.ts @ehharding
+
+# Package Ecosystem
+package.json @ehharding
+turbo.json @ehharding
+
+# Web Infrastructure
+crowdin.yml @ehharding
+apps/site/redirects.json @ehharding
+apps/site/site.json @ehharding
+apps/site/wrangler.jsonc @ehharding
+apps/site/open-next.config.ts @ehharding
+
+# Critical Documents
+docs @ehharding
+LICENSE @ehharding
+CONTRIBUTING.md @ehharding
+GOVERNANCE.md @ehharding

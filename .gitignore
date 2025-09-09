@@ -1,0 +1,43 @@
+# Commonly Ignored Node.js Files
+node_modules
+.env.*
+
+# npm Compatibility
+.npm
+npm-debug.log
+package-lock.json
+
+# Next.js Build Output
+apps/site/.next
+apps/site/build
+
+# Test Runner
+junit.xml
+lcov.info
+
+# Storybook
+.nyc_output
+storybook-static
+build-storybook.log
+
+# Vercel Files
+.turbo
+.vercel
+cache
+
+# Cache Files
+.eslintmdcache
+.prettiercache
+.stylelintcache
+
+# TypeScript
+tsconfig.tsbuildinfo
+dist/
+
+# Cloudflare Build Output
+apps/site/.open-next
+apps/site/.wrangler
+
+# Playwright
+playwright-report
+test-results

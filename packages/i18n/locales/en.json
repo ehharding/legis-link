@@ -1,0 +1,260 @@
+{
+  "components": {
+    "containers": {
+      "footer": {
+        "links": {
+          "codeOfConduct": "Code of Conduct",
+          "privacyPolicy": "Privacy Policy",
+          "securityPolicy": "Security Policy",
+          "trademarkPolicy": "Trademark Policy"
+        }
+      },
+      "navBar": {
+        "links": {
+          "constitution": "Constitution",
+          "congress": "Congress",
+          "legislation": "Legislation",
+          "data": "Data",
+          "learn": "Learn",
+          "about": "About",
+          "blog": "Blog"
+        }
+      }
+    },
+    "navigation": {
+      "constitution": {
+        "links": {
+          "fullText": "Full Text",
+          "articles": "Articles",
+          "amendments": "Amendments",
+          "history": "Constitutional History",
+          "interpretation": "Supreme Court Interpretations",
+          "interactive": "Interactive Constitution"
+        }
+      },
+      "congress": {
+        "links": {
+          "house": "House of Representatives",
+          "senate": "Senate",
+          "committees": "Committees",
+          "representatives": "Find Your Representatives",
+          "sessions": "Congressional Sessions",
+          "schedule": "Congressional Calendar",
+          "votes": "Recent Votes",
+          "memberProfiles": "Member Profiles",
+          "memberVotes": "Member Voting Records",
+          "cosponsors": "Bill Cosponsors"
+        }
+      },
+      "legislation": {
+        "links": {
+          "bills": "Current Bills",
+          "laws": "Laws",
+          "status": "Bill Status",
+          "search": "Search Legislation",
+          "recent": "Recently Passed",
+          "popular": "Popular Bills",
+          "tracker": "Bill Tracker",
+          "subjects": "Legislative Subjects",
+          "committees": "Committee Referrals"
+        }
+      },
+      "data": {
+        "links": {
+          "visualizations": "Data Visualizations",
+          "votingRecords": "Voting Records",
+          "statistics": "Congressional Statistics",
+          "api": "API Documentation",
+          "downloads": "Data Downloads",
+          "analysis": "Data Analysis Tools",
+          "bulk": "Bulk Data Access",
+          "historical": "Historical Data",
+          "realtime": "Real-time Updates"
+        }
+      },
+      "learn": {
+        "sections": {
+          "legislative": {
+            "title": "Legislative Process",
+            "links": {
+              "howBillsBecomeLaws": "How Bills Become Laws",
+              "committees": "Committee Roles",
+              "markups": "Bill Markups",
+              "amendments": "Amendment Process",
+              "votes": "Types of Votes"
+            }
+          },
+          "government": {
+            "title": "Government Fundamentals",
+            "links": {
+              "branchesOfGovernment": "Branches of Government",
+              "checks": "Checks and Balances",
+              "federalism": "Federalism"
+            }
+          },
+          "resources": {
+            "title": "Resources",
+            "links": {
+              "glossary": "Legal Terminology",
+              "history": "U.S. Legal History",
+              "forEducators": "For Educators",
+              "research": "Research Guides"
+            }
+          }
+        }
+      },
+      "about": {
+        "links": {
+          "about": "About Angular Laws",
+          "aboutSide": "About Angular Laws®",
+          "branding": "Branding of Angular Laws",
+          "governance": "Project Governance",
+          "security": "Security Reporting"
+        }
+      },
+      "getInvolved": {
+        "links": {
+          "getInvolved": "Get Involved",
+          "contribute": "Contribute to Angular Laws",
+          "codeOfConduct": "Code of Conduct"
+        }
+      }
+    },
+    "pagination": {
+      "next": "Next",
+      "previous": "Previous"
+    },
+    "common": {
+      "alertBox": {
+        "info": "Info",
+        "warning": "Warning",
+        "danger": "Danger"
+      },
+      "breadcrumbs": {
+        "navigateToHome": "Navigate to Home"
+      },
+      "crossLink": {
+        "previous": "Prev",
+        "next": "Next"
+      },
+      "codebox": {
+        "copy": "Copy to Clipboard",
+        "copied": "Copied to Clipboard!"
+      },
+      "pagination": {
+        "prev": "Previous",
+        "prevAriaLabel": "Previous Page",
+        "next": "Next",
+        "nextAriaLabel": "Next Page",
+        "defaultLabel": "Pagination",
+        "pageLabel": "Go to Page {pageNumber}"
+      },
+      "sidebar": {
+        "title": "Change Page"
+      },
+      "languageDropdown": {
+        "label": "Choose Language"
+      },
+      "themeToggle": {
+        "label": "Toggle Dark Mode"
+      }
+    },
+    "metabar": {
+      "lastUpdated": "Last Updated",
+      "readingTime": "Reading Time",
+      "addedIn": "Added In",
+      "author": "Author",
+      "authors": "Authors",
+      "contribute": "Contribute",
+      "contributeText": "Edit This Page",
+      "viewAs": "View As",
+      "tableOfContents": "Table of Contents"
+    },
+    "search": {
+      "searchBox": {
+        "placeholder": "Start typing..."
+      }
+    },
+    "blog": {
+      "blogHeader": {
+        "subtitle": "The latest Angular Laws news and resources",
+        "rssLink": "RSS Feed"
+      },
+      "post": {
+        "authorByLine": "{author, select, null {} other {By {author}}}"
+      },
+      "index": {
+        "categoryName": "{category, select, all {Blog} other {{category} Blog Posts}}"
+      },
+      "page": {
+        "title": "Blog",
+        "selectCategory": "Categories",
+        "categories": {
+          "all": "Everything",
+          "announcements": "Announcements",
+          "community": "Community",
+          "feature": "Feature",
+          "uncategorized": "Uncategorized"
+        }
+      }
+    },
+    "api": {
+      "status": {
+        "up": "API Services Operational",
+        "partial": "Some API Services Degraded",
+        "down": "API Services Unavailable"
+      },
+      "documentation": {
+        "endpoints": "API Endpoints",
+        "parameters": "Query Parameters",
+        "authentication": "Authentication",
+        "rateLimit": "Rate Limits",
+        "examples": "Example Queries"
+      }
+    },
+    "filters": {
+      "congress": {
+        "title": "Congressional Session",
+        "all": "All Sessions",
+        "current": "Current Session ({number})",
+        "previous": "Previous Session ({number})"
+      },
+      "chamber": {
+        "title": "Chamber",
+        "both": "Both Chambers",
+        "house": "House",
+        "senate": "Senate"
+      },
+      "status": {
+        "title": "Status",
+        "all": "All Statuses",
+        "introduced": "Introduced",
+        "referred": "Referred to Committee",
+        "reported": "Reported by Committee",
+        "passed": "Passed",
+        "enacted": "Enacted"
+      },
+      "date": {
+        "title": "Date Range",
+        "from": "From",
+        "to": "To",
+        "apply": "Apply Range"
+      },
+      "sponsor": {
+        "title": "Sponsor",
+        "placeholder": "Search by name..."
+      }
+    },
+    "errors": {
+      "notFound": {
+        "title": "Page Could Not Be Found",
+        "description": "Sorry, we couldn't find the page you're after! Try starting again from the homepage."
+      },
+      "internalServerError": {
+        "title": "Internal Server Error",
+        "description": "This page has thrown a non-recoverable error."
+      },
+      "backToHome": "Back to Home"
+    }
+  }
+}

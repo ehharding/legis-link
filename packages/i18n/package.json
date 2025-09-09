@@ -1,0 +1,29 @@
+{
+  "name": "@legis-link/website-i18n",
+  "version": "0.0.0",
+  "type": "module",
+  "exports": {
+    "./*": [
+      "./src/*",
+      "./src/*.d.ts",
+      "./src/*.mjs",
+      "./src/*.json"
+    ],
+    ".": "./src/index.ts"
+  },
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "scripts": {
+    "lint": "node --run lint:js",
+    "lint:fix": "node --run lint:js:fix",
+    "lint:js": "eslint \"**/*.{js,mjs,ts}\"",
+    "lint:js:fix": "node --run lint:js -- --fix"
+  },
+  "devDependencies": {
+    "@legis-link/eslint-config": "workspace:*",
+    "eslint-import-resolver-typescript": "catalog:",
+    "eslint-plugin-import-x": "catalog:",
+    "typescript": "catalog:",
+    "typescript-eslint": "catalog:"
+  }
+}

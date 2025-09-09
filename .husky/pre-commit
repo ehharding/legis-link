@@ -1,0 +1,5 @@
+# Lint And Format Staged Files
+node --run lint:staged
+
+# Verify TypeScript Fully
+node --run lint:types

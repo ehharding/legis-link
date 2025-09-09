@@ -1,0 +1,20 @@
+# Next.js Files
+.next
+.swc
+.turbo
+build
+
+# Public Folder
+public
+
+# Test Runner
+junit.xml
+lcov.info
+
+# Cloudflare Build Output
+.open-next
+.wrangler
+
+# Playwright
+playwright-report
+test-results
