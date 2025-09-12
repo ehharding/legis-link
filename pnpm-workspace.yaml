@@ -16,7 +16,7 @@ catalog:
   classnames: ~2.5.1
   cross-env: ^10.0.0
   eslint: ~9.35.0
-  eslint-config-next: 15.5.2
+  eslint-config-next: 15.5.3
   eslint-import-resolver-typescript: ~4.4.4
   eslint-plugin-import-x: ~4.16.1
   eslint-plugin-mdx: ~3.6.2
