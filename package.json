@@ -70,7 +70,7 @@
     "cross-env": "catalog:",
     "eslint": "catalog:",
     "eslint-plugin-import-x": "catalog:",
-    "globals": "^16.3.0",
+    "globals": "^16.4.0",
     "prettier": "catalog:",
     "prettier-plugin-tailwindcss": "catalog:"
   }
