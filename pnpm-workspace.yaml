@@ -5,7 +5,7 @@ packages:
 catalog:
   '@eslint/js': ~9.35.0
   '@opennextjs/cloudflare': ^1.8.1
-  '@playwright/test': ^1.55.0
+  '@playwright/test': ^1.56.0
   '@tailwindcss/postcss': ~4.1.13
   '@testing-library/react': ~16.3.0
   '@testing-library/user-event': ~14.6.1
