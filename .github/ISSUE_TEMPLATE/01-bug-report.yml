@@ -1,48 +1,48 @@
-name: Report A Technical/Visual Issue On The Legis Link Website
-description: 'Is something not working as expected? Did you encounter a bug or glitch with the website?'
+name: Report A Technical/Visual Issue On Legis Link
+description: 'Is something not working as expected? Did you encounter a bug or a glitch with the website?'
 labels: [Bug]
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for reporting an issue you've found on the Legis Link website! Please fill in the template below. If you
-        are unsure about something, just do the best that you can. If you're reporting a visual bug, it will be much
-        easier for us to fix it when you attach a screenshot as well.
+        Thanks for reporting an issue you've found on Legis Link. Please fill in the template below. If you're unsure
+        about something, just do the best that you can. If you're reporting a visual issue, it will be much easier for
+        us to fix it when you attach a screenshot as well.
   - type: input
     attributes:
       label: 'URL:'
-      description: The URL Of The Page You're Reporting An Issue On
+      description: The URL of the page you're reporting an issue on
       placeholder: https://legis-link.com/en/
     validations:
       required: true
   - type: input
     attributes:
       label: 'Browser Name:'
-      description: The Name Of The Web Browser You're Using
+      description: The name of the web browser you're using
       placeholder: Firefox
     validations:
       required: true
   - type: input
     attributes:
       label: 'Browser Version:'
-      description: The Version Number Of The Web Browser You're Using
-      placeholder: '142.0.1 (64-Bit)'
+      description: The version number of the web browser you're using
+      placeholder: '145.0.2 (64-bit)'
     validations:
       required: true
   - type: input
     attributes:
       label: 'Operating System:'
-      description: The Operation System You're Using (Please Write It In Full, With Version Number)
-      placeholder: 'Windows 11 Pro, 24H2, 26100.4946'
+      description: The operating system you're using (write it in full, with version number)
+      placeholder: 'Windows 11 Pro, 25H2, 26200.7309'
     validations:
       required: true
   - type: textarea
     attributes:
       label: 'How To Reproduce The Issue:'
       placeholder: |
-        1. What I Did
-        2. What I Expected To Happen
-        3. What I Actually Got
-        4. If Possible, Images Or Videos Are Welcome
+        1. What I did
+        2. What I expected to happen
+        3. What I actually got
+        4. If possible, images or videos are welcome.
     validations:
       required: true

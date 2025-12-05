@@ -5,7 +5,7 @@
     "name": "Arabic",
     "langDir": "rtl",
     "dateFormat": "YYYY.MM.DD",
-    "hreflang": "ar",
+    "hrefLang": "ar",
     "enabled": false,
     "default": false
   },
@@ -15,7 +15,7 @@
     "name": "Bengali",
     "langDir": "ltr",
     "dateFormat": "DD.MM.YYYY",
-    "hreflang": "bn",
+    "hrefLang": "bn",
     "enabled": false,
     "default": false
   },
@@ -25,7 +25,7 @@
     "name": "German",
     "langDir": "ltr",
     "dateFormat": "DD.MM.YYYY",
-    "hreflang": "de",
+    "hrefLang": "de",
     "enabled": false,
     "default": false
   },
@@ -35,7 +35,7 @@
     "name": "Greek",
     "langDir": "ltr",
     "dateFormat": "DD/MM/YYYY",
-    "hreflang": "el-GR",
+    "hrefLang": "el-GR",
     "enabled": false,
     "default": false
   },
@@ -45,7 +45,7 @@
     "name": "English",
     "langDir": "ltr",
     "dateFormat": "MM.DD.YYYY",
-    "hreflang": "en-US",
+    "hrefLang": "en-GB",
     "enabled": true,
     "default": true
   },
@@ -55,8 +55,8 @@
     "name": "Spanish",
     "langDir": "ltr",
     "dateFormat": "DD.MM.YYYY",
-    "hreflang": "es-ES",
-    "enabled": true,
+    "hrefLang": "es-ES",
+    "enabled": false,
     "default": false
   },
   {
@@ -65,7 +65,7 @@
     "name": "Persian",
     "langDir": "rtl",
     "dateFormat": "YYYY/MM/DD",
-    "hreflang": "fa",
+    "hrefLang": "fa",
     "enabled": false,
     "default": false
   },
@@ -75,7 +75,7 @@
     "name": "Finnish",
     "langDir": "ltr",
     "dateFormat": "DD.MM.YYYY",
-    "hreflang": "fi",
+    "hrefLang": "fi",
     "enabled": false,
     "default": false
   },
@@ -85,8 +85,8 @@
     "name": "French",
     "langDir": "ltr",
     "dateFormat": "DD.MM.YYYY",
-    "hreflang": "fr",
-    "enabled": true,
+    "hrefLang": "fr",
+    "enabled": false,
     "default": false
   },
   {
@@ -95,7 +95,7 @@
     "name": "Hebrew",
     "langDir": "rtl",
     "dateFormat": "DD-MM-YYYY",
-    "hreflang": "he",
+    "hrefLang": "he",
     "enabled": false,
     "default": false
   },
@@ -105,7 +105,7 @@
     "name": "Hindi",
     "langDir": "ltr",
     "dateFormat": "DD/MM/YYYY",
-    "hreflang": "hi",
+    "hrefLang": "hi",
     "enabled": false,
     "default": false
   },
@@ -115,8 +115,8 @@
     "name": "Indonesian",
     "langDir": "ltr",
     "dateFormat": "DD.MM.YYYY",
-    "hreflang": "id",
-    "enabled": true,
+    "hrefLang": "id",
+    "enabled": false,
     "default": false
   },
   {
@@ -125,7 +125,7 @@
     "name": "Italian",
     "langDir": "ltr",
     "dateFormat": "DD.MM.YYYY",
-    "hreflang": "it",
+    "hrefLang": "it",
     "enabled": false,
     "default": false
   },
@@ -135,8 +135,8 @@
     "name": "Japanese",
     "langDir": "ltr",
     "dateFormat": "YYYY.MM.DD",
-    "hreflang": "ja",
-    "enabled": true,
+    "hrefLang": "ja",
+    "enabled": false,
     "default": false
   },
   {
@@ -145,7 +145,7 @@
     "name": "Georgian",
     "langDir": "ltr",
     "dateFormat": "DD.MM.YYYY",
-    "hreflang": "ka",
+    "hrefLang": "ka",
     "enabled": false,
     "default": false
   },
@@ -155,8 +155,8 @@
     "name": "Korean",
     "langDir": "ltr",
     "dateFormat": "YYYY.MM.DD",
-    "hreflang": "ko",
-    "enabled": true,
+    "hrefLang": "ko",
+    "enabled": false,
     "default": false
   },
   {
@@ -165,7 +165,7 @@
     "name": "Mongolian",
     "langDir": "ltr",
     "dateFormat": "YYYY.MM.DD",
-    "hreflang": "mn",
+    "hrefLang": "mn",
     "enabled": false,
     "default": false
   },
@@ -175,7 +175,7 @@
     "name": "Dutch",
     "langDir": "ltr",
     "dateFormat": "DD-MM-YYYY",
-    "hreflang": "nl",
+    "hrefLang": "nl",
     "enabled": false,
     "default": false
   },
@@ -185,7 +185,7 @@
     "name": "Polish",
     "langDir": "ltr",
     "dateFormat": "DD/MM/YYYY",
-    "hreflang": "pl",
+    "hrefLang": "pl",
     "enabled": false,
     "default": false
   },
@@ -195,7 +195,7 @@
     "name": "Brazilian Portuguese",
     "langDir": "ltr",
     "dateFormat": "DD.MM.YYYY",
-    "hreflang": "",
+    "hrefLang": "",
     "enabled": false,
     "default": false
   },
@@ -205,8 +205,8 @@
     "name": "Português",
     "langDir": "ltr",
     "dateFormat": "MM.DD.YYYY",
-    "hreflang": "pt",
-    "enabled": true,
+    "hrefLang": "pt",
+    "enabled": false,
     "default": false
   },
   {
@@ -215,7 +215,7 @@
     "name": "Romanian",
     "langDir": "ltr",
     "dateFormat": "DD-MM-YYYY",
-    "hreflang": "ro",
+    "hrefLang": "ro",
     "enabled": false,
     "default": false
   },
@@ -225,7 +225,7 @@
     "name": "Russian",
     "langDir": "ltr",
     "dateFormat": "DD.MM.YYYY",
-    "hreflang": "ru",
+    "hrefLang": "ru",
     "enabled": false,
     "default": false
   },
@@ -235,7 +235,7 @@
     "name": "Serbian",
     "langDir": "ltr",
     "dateFormat": "DD.MM.YYYY",
-    "hreflang": "sr",
+    "hrefLang": "sr",
     "enabled": false,
     "default": false
   },
@@ -245,7 +245,7 @@
     "name": "Swedish",
     "langDir": "ltr",
     "dateFormat": "YYYY-MM-DD",
-    "hreflang": "sv",
+    "hrefLang": "sv",
     "enabled": false,
     "default": false
   },
@@ -255,8 +255,8 @@
     "name": "Turkish",
     "langDir": "ltr",
     "dateFormat": "DD.MM.YYYY",
-    "hreflang": "tr",
-    "enabled": true,
+    "hrefLang": "tr",
+    "enabled": false,
     "default": false
   },
   {
@@ -265,8 +265,8 @@
     "name": "Ukrainian",
     "langDir": "ltr",
     "dateFormat": "DD.MM.YYYY",
-    "hreflang": "uk",
-    "enabled": true,
+    "hrefLang": "uk",
+    "enabled": false,
     "default": false
   },
   {
@@ -275,7 +275,7 @@
     "name": "Urdu",
     "langDir": "rtl",
     "dateFormat": "DD/MM/YYYY",
-    "hreflang": "ur",
+    "hrefLang": "ur",
     "enabled": false,
     "default": false
   },
@@ -285,7 +285,7 @@
     "name": "Uzbek",
     "langDir": "ltr",
     "dateFormat": "DD.MM.YYYY",
-    "hreflang": "uz",
+    "hrefLang": "uz",
     "enabled": false,
     "default": false
   },
@@ -295,8 +295,8 @@
     "name": "Simplified Chinese",
     "langDir": "ltr",
     "dateFormat": "YYYY/MM/DD",
-    "hreflang": "zh-Hans",
-    "enabled": true,
+    "hrefLang": "zh-Hans",
+    "enabled": false,
     "default": false
   },
   {
@@ -305,8 +305,8 @@
     "name": "Traditional Chinese",
     "langDir": "ltr",
     "dateFormat": "YYYY/MM/DD",
-    "hreflang": "zh-Hant",
-    "enabled": true,
+    "hrefLang": "zh-Hant",
+    "enabled": false,
     "default": false
   }
 ]

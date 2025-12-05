@@ -10,13 +10,9 @@
     "incremental": true,
     "isolatedModules": true,
     "noEmit": true,
-    "noImplicitAny": true,
-    "noImplicitReturns": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
-    "strictNullChecks": true,
-    "strictPropertyInitialization": true,
     "baseUrl": ".",
     "jsx": "preserve",
     "plugins": [
@@ -39,5 +35,5 @@
     ".stylelintrc.mjs",
     ".next/types/**/*.ts"
   ],
-  "exclude": [".next", "node_modules", "eslint.config.js"]
+  "exclude": [".next", "node_modules"]
 }

@@ -11,6 +11,11 @@
     ],
     ".": "./src/index.ts"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ehharding/legis-link",
+    "directory": "packages/i18n"
+  },
   "main": "./src/index.ts",
   "module": "./src/index.ts",
   "scripts": {
@@ -20,10 +25,6 @@
     "lint:js:fix": "node --run lint:js -- --fix"
   },
   "devDependencies": {
-    "@legis-link/eslint-config": "workspace:*",
-    "eslint-import-resolver-typescript": "catalog:",
-    "eslint-plugin-import-x": "catalog:",
-    "typescript": "catalog:",
-    "typescript-eslint": "catalog:"
+    "typescript": "catalog:"
   }
 }

@@ -1,18 +1,18 @@
-name: Suggest A New Feature Or Improvement For The Legis Link Website
-description: 'Do you have an idea or a suggestion that you would like to share?'
-labels: [feature request]
+name: Suggest A New Feature Or Improvement For Legis Link
+description: 'Do you have an idea or a suggestion for the website that you would like to share?'
+labels: [Feature Request]
 body:
   - type: markdown
     attributes:
       value: |
-        You have an idea how to improve the site? That's awesome! Before submitting, please have a look at the existing
+        You have an idea to improve the website? That's awesome! Before submitting, please have a look at the existing
         issues to see if there's already something related to your suggestion.
   - type: textarea
     attributes:
-      label: 'Enter Your Suggestion Details:'
+      label: 'Suggestion Details:'
       placeholder: |
-        1. What I Expected To Happen
-        2. Your Reason (If Possible, Images Or Videos Are Welcome)
-        3. What I Plan To Do (Optional But Better)
+        1. What I expected to happen
+        2. Your reason (if possible, images or videos are welcome)
+        3. What I plan to do (optional but better)
     validations:
       required: true

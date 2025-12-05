@@ -1,7 +1,6 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "extends": ["//"],
-  "globalEnv": ["NODE_ENV"],
   "tasks": {
     "build": {
       "dependsOn": ["build:blog-data", "^build"],
@@ -16,16 +15,18 @@
       "env": [
         "VERCEL_ENV",
         "VERCEL_URL",
-        "VERCEL_REGION",
         "NEXT_PUBLIC_STATIC_EXPORT",
         "NEXT_PUBLIC_STATIC_EXPORT_LOCALE",
         "NEXT_PUBLIC_BASE_URL",
         "NEXT_PUBLIC_DIST_URL",
         "NEXT_PUBLIC_DOCS_URL",
         "NEXT_PUBLIC_BASE_PATH",
+        "NEXT_PUBLIC_ORAMA_API_KEY",
+        "NEXT_PUBLIC_ORAMA_ENDPOINT",
         "NEXT_PUBLIC_DATA_URL",
         "TURBO_CACHE",
-        "TURBO_TELEMETRY_DISABLED"
+        "TURBO_TELEMETRY_DISABLED",
+        "TURBOPACK_STATS"
       ]
     },
     "build:blog-data": {
@@ -43,7 +44,7 @@
       ],
       "outputs": [".open-next/**"]
     },
-    "cloudflare:deploy": {
+    "cloudflare:preview": {
       "dependsOn": ["cloudflare:build:worker"],
       "inputs": [
         "{app,components,hooks,i18n,layouts,middlewares,pages,providers,types,util}/**/*.{ts,tsx}",
@@ -54,7 +55,7 @@
       ],
       "outputs": [".open-next/**"]
     },
-    "cloudflare:preview": {
+    "cloudflare:deploy": {
       "dependsOn": ["cloudflare:build:worker"],
       "inputs": [
         "{app,components,hooks,i18n,layouts,middlewares,pages,providers,types,util}/**/*.{ts,tsx}",
@@ -77,16 +78,18 @@
       "env": [
         "VERCEL_ENV",
         "VERCEL_URL",
-        "VERCEL_REGION",
         "NEXT_PUBLIC_STATIC_EXPORT",
         "NEXT_PUBLIC_STATIC_EXPORT_LOCALE",
         "NEXT_PUBLIC_BASE_URL",
         "NEXT_PUBLIC_DIST_URL",
         "NEXT_PUBLIC_DOCS_URL",
         "NEXT_PUBLIC_BASE_PATH",
+        "NEXT_PUBLIC_ORAMA_API_KEY",
+        "NEXT_PUBLIC_ORAMA_ENDPOINT",
         "NEXT_PUBLIC_DATA_URL",
         "TURBO_CACHE",
-        "TURBO_TELEMETRY_DISABLED"
+        "TURBO_TELEMETRY_DISABLED",
+        "TURBOPACK_STATS"
       ]
     },
     "dev": {
@@ -96,26 +99,21 @@
       "env": [
         "VERCEL_ENV",
         "VERCEL_URL",
-        "VERCEL_REGION",
         "NEXT_PUBLIC_STATIC_EXPORT",
         "NEXT_PUBLIC_STATIC_EXPORT_LOCALE",
         "NEXT_PUBLIC_BASE_URL",
         "NEXT_PUBLIC_DIST_URL",
         "NEXT_PUBLIC_DOCS_URL",
         "NEXT_PUBLIC_BASE_PATH",
+        "NEXT_PUBLIC_ORAMA_API_KEY",
+        "NEXT_PUBLIC_ORAMA_ENDPOINT",
         "NEXT_PUBLIC_DATA_URL",
         "TURBO_CACHE",
-        "TURBO_TELEMETRY_DISABLED"
+        "TURBO_TELEMETRY_DISABLED",
+        "TURBOPACK_STATS"
       ]
     },
     "format": {
-      "cache": false
-    },
-    "lint:css": {
-      "inputs": ["{app,components,layouts,pages,styles}/**/*.css"],
-      "outputs": [".stylelintcache"]
-    },
-    "lint:fix": {
       "cache": false
     },
     "lint:js": {
@@ -130,6 +128,13 @@
       "inputs": ["{app,pages}/**/*.{md,mdx}", "*.{md,mdx}"],
       "outputs": [".eslintmdcache"]
     },
+    "lint:css": {
+      "inputs": ["{app,components,layouts,pages,styles}/**/*.css"],
+      "outputs": [".stylelintcache"]
+    },
+    "lint:fix": {
+      "cache": false
+    },
     "lint:types": {
       "cache": false
     },
@@ -142,16 +147,18 @@
       "env": [
         "VERCEL_ENV",
         "VERCEL_URL",
-        "VERCEL_REGION",
         "NEXT_PUBLIC_STATIC_EXPORT",
         "NEXT_PUBLIC_STATIC_EXPORT_LOCALE",
         "NEXT_PUBLIC_BASE_URL",
         "NEXT_PUBLIC_DIST_URL",
         "NEXT_PUBLIC_DOCS_URL",
         "NEXT_PUBLIC_BASE_PATH",
+        "NEXT_PUBLIC_ORAMA_API_KEY",
+        "NEXT_PUBLIC_ORAMA_ENDPOINT",
         "NEXT_PUBLIC_DATA_URL",
         "TURBO_CACHE",
-        "TURBO_TELEMETRY_DISABLED"
+        "TURBO_TELEMETRY_DISABLED",
+        "TURBOPACK_STATS"
       ]
     },
     "test:unit": {

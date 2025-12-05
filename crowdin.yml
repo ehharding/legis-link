@@ -2,7 +2,7 @@ project_id_env: 'CROWDIN_PROJECT_ID'
 api_token_env: 'CROWDIN_PERSONAL_TOKEN'
 append_commit_message: false
 
-# Prevent Crowdin From Flattening The Directory Structure
+# Prevent Crowdin from flattening the directory structure
 preserve_hierarchy: true
 
 files:
@@ -40,8 +40,8 @@ files:
         pt-BR: pt-br
         zh-CN: zh-cn
         zh-TW: zh-tw
-  - source: /packages/i18n/locales/en.json
-    translation: /packages/i18n/locales/%two_letters_code%.json
+  - source: /packages/i18n/src/locales/en.json
+    translation: /packages/i18n/src/locales/%two_letters_code%.json
     languages_mapping:
       two_letters_code:
         es-ES: es

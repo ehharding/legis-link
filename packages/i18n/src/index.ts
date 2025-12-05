@@ -1,182 +1,187 @@
 /**
- * @fileoverview Core Internationalization (i18n) Utility Functions For The Application
+ * @fileoverview Utility functions for the internationalization (i18n) package
  */
 
-import localeConfigs from './config.json' with { type: 'json' };
+import localeConfig from './config.json' with { type: 'json' };
 import type { Locale, LocaleConfig } from './types';
 
 /**
- * Cache For Loaded Locales.
+ * Cache for loaded locales
  */
 const localeCache: Map<string, Locale> = new Map();
 
 /**
- * Gets The Default Locale Configuration.
+ * Gets a specific locale by its language code
  *
- * @returns The Default Locale Configuration
- * @throws Error If No Default Locale Is Configured
+ * @param code Language code of the locale configuration to find (e.g., 'en', 'fr')
+ * @returns Matching locale configuration, or undefined if not found
  */
-const getDefaultLocaleConfig = (): LocaleConfig => {
-  const defaultLocaleConfig: LocaleConfig | undefined = localeConfigs.find(
-    (localeConfig: LocaleConfig): boolean => localeConfig.default
-  );
+const getLocale = (code: string): LocaleConfig | undefined =>
+  localeConfig.find((locale: LocaleConfig): boolean => locale.code === code);
 
-  if (!defaultLocaleConfig) {
-    throw new Error('I18N_ERROR: No Default Locale Configured');
-  }
-
-  return defaultLocaleConfig;
+/**
+ * Checks if a specific locale is enabled by its language code
+ *
+ * @param code Language code of the locale to check (e.g., 'en', 'fr')
+ * @returns True if the locale is enabled, false otherwise
+ */
+const isLocaleEnabled = (code: string): boolean => {
+  const locale: LocaleConfig | undefined = getLocale(code);
+  return locale ? locale.enabled : false;
 };
 
 /**
- * Gets A Specific Locale Configuration By Its Language Code.
+ * Gets all available locale configurations
  *
- * @param languageCode Language Code Of The Locale Configuration To Find (e.g., 'en', 'fr')
- * @returns Matching Locale Configuration, Or Undefined If Not Found
+ * @returns Array of available locale configurations
  */
-const getLocaleConfig = (languageCode: string): LocaleConfig | undefined =>
-  localeConfigs.find((localeConfig: LocaleConfig): boolean => localeConfig.code === languageCode);
+const getAvailableLocales = (): ReadonlyArray<LocaleConfig> =>
+  localeConfig.filter((locale: LocaleConfig): boolean => locale.enabled);
 
 /**
- * Gets All Enabled Locale Configurations.
+ * Gets a list of all supported locale language codes
  *
- * @returns Array Of Enabled Locale Configurations
+ * @returns Array of locale language codes
  */
-const getEnabledLocaleConfigs = (): ReadonlyArray<LocaleConfig> =>
-  localeConfigs.filter((localeConfig: LocaleConfig): boolean => localeConfig.enabled);
+const getAvailableLocaleCodes = (): ReadonlyArray<string> =>
+  getAvailableLocales().map((locale: LocaleConfig): string => locale.code);
 
 /**
- * Dynamically Imports A Locale By Its Language Code.
- * Uses A Cache To Avoid Redundant Imports.
+ * Gets a map of all supported locales, indexed by their language codes
  *
- * @param languageCode Locale Language Code To Import Messages For (e.g., 'en', 'fr')
- * @returns Promise Resolving To The Locale
- * @throws Error If The Locale Import Fails Or The Imported Data Is Invalid
+ * @returns Map of locale configurations, indexed by their language codes
  */
-const importLocale = async (languageCode: string): Promise<Locale> => {
-  const cachedLocale: Locale | undefined = localeCache.get(languageCode);
+const getAvailableLocalesMap = (): Record<string, LocaleConfig> =>
+  Object.fromEntries(
+    getAvailableLocales().map((locale: LocaleConfig): [string, LocaleConfig] => [locale.code, locale])
+  );
+
+/**
+ * Gets the default locale
+ *
+ * @returns The default locale
+ * @throws Error If no default locale is configured
+ */
+const getDefaultLocale = (): LocaleConfig => {
+  const defaultLocale: LocaleConfig | undefined = getAvailableLocales().find(
+    (locale: LocaleConfig): boolean => locale.default
+  );
+
+  if (!defaultLocale) {
+    throw new Error('I18N_ERROR: No Default Locale Configured');
+  }
+
+  return defaultLocale;
+};
+
+/**
+ * Dynamically imports a locale by its language code
+ * @remarks Uses a cache to avoid redundant imports
+ *
+ * @param code Locale language code to import messages for (e.g., 'en', 'fr')
+ * @returns Promise resolving to the locale
+ * @throws Error If the locale import fails or the imported data is invalid
+ */
+const importLocale = async (code: string): Promise<Locale> => {
+  const cachedLocale: Locale | undefined = localeCache.get(code);
 
   if (cachedLocale) {
     return cachedLocale;
   }
 
   try {
-    const locale: Locale = await import(`@legis-link/i18n/locales/${languageCode}.json`, { with: { type: 'json' } });
+    const locale: Locale = await import(`@legis-link/i18n/src/locales/${code}.json`, {
+      with: { type: 'json' },
+    });
 
-    localeCache.set(languageCode, locale);
+    localeCache.set(code, locale);
 
     return locale;
   } catch (error: unknown) {
-    const defaultLocaleConfig: LocaleConfig = getDefaultLocaleConfig();
+    const defaultLocale: LocaleConfig = getDefaultLocale();
 
-    if (languageCode !== defaultLocaleConfig.code) {
+    if (code !== defaultLocale.code) {
       console.warn(
-        `I18N_WARNING: Failed To Load Locale '${languageCode}', Falling Back To Default Locale '${defaultLocaleConfig.code}'`,
+        `I18N_WARNING: Failed To Load Locale '${code}', Falling Back To Default Locale '${defaultLocale.code}'`,
         error
       );
 
-      return importLocale(defaultLocaleConfig.code);
+      return importLocale(defaultLocale.code);
     }
 
     throw new Error(
-      `I18N_ERROR: Failed To Load Default Locale '${defaultLocaleConfig.code}': ${error instanceof Error ? error.message : String(error)}`
+      `I18N_ERROR: Failed To Load Default Locale '${defaultLocale.code}': ${error instanceof Error ? error.message : String(error)}`
     );
   }
 };
 
 /**
- * Preloads A Specific Locale To Avoid Loading Delays During Runtime.
+ * Preloads a specific locale to avoid loading delays during runtime
  *
- * @param languageCode Language Code Of The Locale To Preload (e.g., 'en', 'fr')
- * @returns Promise Resolving When The Locale Is Loaded
+ * @param code Language code of the locale to preload (e.g., 'en', 'fr')
+ * @returns Promise resolving when the locale is loaded
  */
-const preloadLocale = async (languageCode: string): Promise<void> => {
-  await importLocale(languageCode);
+const preloadLocale = async (code: string): Promise<void> => {
+  await importLocale(code);
 };
 
 /**
- * Preloads All Enabled Locales.
- * Improves Performance By Loading Locales In The Background.
+ * Preloads all enabled locales
+ * @remarks Improves performance by loading locales in the background
  *
- * @returns Promise Resolving When All Enabled Locales Are Loaded
+ * @returns Promise resolving when all enabled locales are loaded
  */
 const preloadEnabledLocales = async (): Promise<void> => {
-  const enabledLocales: ReadonlyArray<LocaleConfig> = getEnabledLocaleConfigs();
+  const enabledLocales: ReadonlyArray<LocaleConfig> = getAvailableLocales();
+
   await Promise.all(
-    enabledLocales.map(async (enabledLocale: LocaleConfig): Promise<void> => preloadLocale(enabledLocale.code))
+    enabledLocales.map(async (enabledLocale: LocaleConfig): Promise<void> => await preloadLocale(enabledLocale.code))
   );
 };
 
 /**
- * Clears The Locale Cache.
- * Useful For Testing Or Forcing A Reload Of Locale Data.
+ * Clears the locale cache
+ * @remarks Useful for testing or forcing a reload of locale data
  *
- * @param [languageCode] Optional Language Code Of A Specific Locale To Clear. If Omitted, Clears The Entire Cache
+ * @param [code] Optional language code of a specific locale to clear. If omitted, clears the entire cache
  */
-const clearLocaleCache = (languageCode?: string): void => {
-  if (typeof languageCode === 'string' && languageCode.trim() !== '') {
-    localeCache.delete(languageCode);
+const clearLocaleCache = (code?: string): void => {
+  if (typeof code === 'string' && code.trim() !== '') {
+    localeCache.delete(code);
   } else {
     localeCache.clear();
   }
 };
 
 /**
- * Gets A List Of All Supported Locale Language Codes.
+ * Formats a number according to the specified locale's rules
  *
- * @returns Array Of Locale Language Codes
+ * @param code Language code of the locale to use for formatting (e.g., 'en', 'fr')
+ * @param number Number to format
+ * @param [options] Optional `Intl.NumberFormatOptions` to customize the formatting
+ * @returns Formatted number as a string
  */
-const getSupportedLanguageCodes = (): ReadonlyArray<string> =>
-  localeConfigs.map((localeConfig: LocaleConfig): string => localeConfig.code);
-
-/**
- * Checks If A Specific Locale Is Supported By Its Language Code.
- *
- * @param languageCode Language Code Of The Locale To Check (e.g., 'en', 'fr')
- * @returns True If The Locale Is Supported, False Otherwise
- */
-const isLocaleSupported = (languageCode: string): boolean => getSupportedLanguageCodes().includes(languageCode);
-
-/**
- * Checks If A Specific Locale Is Enabled By Its Language Code.
- *
- * @param languageCode Language Code Of The Locale To Check (e.g., 'en', 'fr')
- * @returns True If The Locale Is Enabled, False Otherwise
- */
-const isLocaleEnabled = (languageCode: string): boolean => {
-  const localeConfig: LocaleConfig | undefined = getLocaleConfig(languageCode);
-  return localeConfig ? localeConfig.enabled : false;
-};
-
-/**
- * Formats A Number According To The Specified Locale's Rules.
- *
- * @param languageCode Language Code Of The Locale To Use For Formatting (e.g., 'en', 'fr')
- * @param number Number To Format
- * @param [options] Optional `Intl.NumberFormatOptions` To Customize The Formatting
- * @returns Formatted Number As A String
- */
-const formatNumber = (languageCode: string, number: number, options?: Readonly<Intl.NumberFormatOptions>): string => {
+const formatNumber = (code: string, number: number, options?: Readonly<Intl.NumberFormatOptions>): string => {
   try {
-    return new Intl.NumberFormat(languageCode, options).format(number);
+    return new Intl.NumberFormat(code, options).format(number);
   } catch (error: unknown) {
-    console.warn(`I18N_WARNING: Could Not Format Number With Locale '${languageCode}', Falling Back To Default`, error);
+    console.warn(`I18N_WARNING: Could Not Format Number With Locale '${code}', Falling Back To Default`, error);
 
-    const defaultLocaleConfig: LocaleConfig = getDefaultLocaleConfig();
-    return new Intl.NumberFormat(defaultLocaleConfig.code, options).format(number);
+    const defaultLocale: LocaleConfig = getDefaultLocale();
+    return new Intl.NumberFormat(defaultLocale.code, options).format(number);
   }
 };
 
 export {
-  getDefaultLocaleConfig,
-  getLocaleConfig,
-  getEnabledLocaleConfigs,
+  getLocale,
+  isLocaleEnabled,
+  getAvailableLocales,
+  getAvailableLocaleCodes,
+  getAvailableLocalesMap,
+  getDefaultLocale,
   importLocale,
   preloadLocale,
   preloadEnabledLocales,
   clearLocaleCache,
-  getSupportedLanguageCodes,
-  isLocaleSupported,
-  isLocaleEnabled,
   formatNumber,
 };

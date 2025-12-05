@@ -1,28 +1,26 @@
-name: Report An Issue On A Page
-description: 'Found An Error Or Something Unclear With One Of Our Pages? Let Us Know!'
-labels: [bug, content]
+name: Report An Issue On An Article
+description: 'Found an error or something unclear in one of our articles? Let us know!'
+labels: [Bug, Content]
 body:
   - type: markdown
     attributes:
       value: |
         Thanks for taking the time to help improve the Legis Link experience! Before submitting, please check if there's
         already an existing issue that matches yours.
-
   - type: input
     attributes:
       label: 'Affected URL'
-      placeholder: 'https://legis-link.com/en/some-page'
-      description: 'Please include the full URL of the page where the issue exists.'
+      placeholder: 'https://legis-link.com/en/some-article'
+      description: 'Please include the full URL of the article where the issue exists.'
     validations:
       required: true
-
   - type: textarea
     attributes:
-      label: 'Describe The Issue In Detail:'
+      label: 'Issue Details:'
       placeholder: |
         1. What is wrong or unclear?
         2. What did you expect to see?
         3. Any suggestions or corrections?
-      description: 'Tell us what you noticed and how we can improve the page.'
+      description: 'Tell us what you noticed and how we can improve the article.'
     validations:
       required: true

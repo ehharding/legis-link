@@ -10,12 +10,14 @@ Request (PR).
 
 ## Validation
 
-<!-- How do you know this is working? What should a reviewer look for? Provide a screenshot if your change is visual.-->
+<!--
+How do you know this is working? What should a reviewer look for? Provide a screenshot if your change is visual.
+-->
 
 ## Related Issues
 
 <!--
-Link To The Issue That Is Fixed By This PR (If There Is One)
+Link to the Issue that is fixed by this PR (if there is one)
 e.g., Fixes #1234, Addresses #1234, Related To #1234, etc.
 -->
 
@@ -32,4 +34,4 @@ You can check the items by adding an `x` between the brackets, like this: `[x]`
 - [ ] I have run `pnpm build` to check if the website builds without errors.
 - [ ] I have run `pnpm format` to ensure the code follows the style guide.
 - [ ] I have run `pnpm test` to check if all tests are passing.
-- [ ] I've covered new added functionality with unit tests if necessary.
+- [ ] I've covered added functionality with unit tests if necessary.

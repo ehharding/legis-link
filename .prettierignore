@@ -1,26 +1,24 @@
-# Commonly Ignored Node.js Files
+# Common Node.js Files
 node_modules
-
-# npm Compatibility
-.npm
-npm-debug.log
 
 # Next.js Build Output
 .next
 
-# Test Runner
-junit.xml
-lcov.info
+# Public Folders
+apps/site/public
 
 # Storybook
 .nyc_output
 storybook-static
 build-storybook.log
 
+# Test Runner
+junit.xml
+lcov.info
+
 # Vercel Files
 .turbo
 .vercel
-cache
 
 # Cache Files
 .eslintmdcache

@@ -4,11 +4,13 @@
 # Infrastructure
 .github @ehharding
 .husky @ehharding
+.nvmrc @ehharding
 codecov.yml @ehharding
+packages/ui-components/scripts/publish.mjs @ehharding
 
 # Dependencies
 pnpm-lock.yaml @ehharding
-pnpm-workspace.yml @ehharding
+pnpm-workspace.yaml @ehharding
 
 # Framework
 apps/site/navigation.mjs @ehharding
@@ -33,3 +35,6 @@ docs @ehharding
 LICENSE @ehharding
 CONTRIBUTING.md @ehharding
 GOVERNANCE.md @ehharding
+
+# Legis Link Blog Posts
+apps/site/pages/en/blog/announcements @ehharding

@@ -1,5 +1,5 @@
 /**
- * @fileoverview Type Definitions For The Internationalization (i18n) System
+ * @fileoverview Type definitions for the internationalization (i18n) package
  */
 
 import type EnglishMessages from '../locales/en.json';
@@ -7,45 +7,45 @@ import type EnglishMessages from '../locales/en.json';
 type Locale = typeof EnglishMessages;
 
 /**
- * Configuration For A Specific Locale
+ * Configuration for a specific locale
  */
 type LocaleConfig = {
   /**
-   * ISO 639-1 (Or Extended) Language Code
+   * ISO 639-1 (or extended) language code
    * @example 'en', 'fr', 'zh-cn'
    */
   readonly code: string;
   /**
-   * Localized Language Name (In That Language)
+   * Localized language name (in that language)
    * @example 'English', 'Français', '简体中文'
    */
   readonly localName: string;
   /**
-   * Language Name In English
+   * Language name in English
    * @example 'English', 'French', 'Simplified Chinese'
    */
   readonly name: string;
   /**
-   * Text Direction: 'ltr' (Left-To-Right) Or 'rtl' (Right-To-Left)
+   * Text direction: 'ltr' (left-to-right) or 'rtl' (right-to-left)
    */
   readonly langDir: string;
   /**
-   * Standard Date Format String
+   * Standard date format string
    * @example 'MM/DD/YYYY', 'YYYY-MM-DD'
    */
   readonly dateFormat: string;
   /**
-   * RFC 5646 hreflang Attribute Value (For SEO And Accessibility)
+   * RFC 5646 hreflang attribute value (for SEO and accessibility)
    * @example 'en-GB', 'fr', 'zh-Hans'
    */
-  readonly hreflang: string;
+  readonly hrefLang: string;
   /**
-   * Whether The Locale Is Enabled And Available For Users
+   * Whether the locale is enabled and available for users
    */
   readonly enabled: boolean;
   /**
-   * Whether This Is The Default Locale Used When No Preference Is Specified.
-   * Only one locale should have this set to true.
+   * Whether this is the default locale used when no preference is specified
+   * @remarks Only one locale should have this set to true
    */
   readonly default: boolean;
 };

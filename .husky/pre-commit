@@ -1,5 +1,5 @@
-# Lint And Format Staged Files
+# Lint and format staged files.
 node --run lint:staged
 
-# Verify TypeScript Fully
+# Fully verify TypeScript.
 node --run lint:types

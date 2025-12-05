@@ -1,24 +1,27 @@
-# Commonly Ignored Node.js Files
+# Common Node.js Files
 node_modules
 .env.*
-
-# npm Compatibility
-.npm
-npm-debug.log
-package-lock.json
 
 # Next.js Build Output
 apps/site/.next
 apps/site/build
+apps/site/public/blog-data.json
 
-# Test Runner
-junit.xml
-lcov.info
+# Distributed Files
+dist
+
+# Playwright
+playwright-report
+test-results
 
 # Storybook
 .nyc_output
 storybook-static
 build-storybook.log
+
+# Test Runner
+junit.xml
+lcov.info
 
 # Vercel Files
 .turbo
@@ -38,6 +41,8 @@ dist/
 apps/site/.open-next
 apps/site/.wrangler
 
-# Playwright
-playwright-report
-test-results
+# macOS Files
+.DS_Store
+
+# Other Files
+.env

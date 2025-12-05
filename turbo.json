@@ -5,6 +5,9 @@
     "//#prettier": {
       "outputs": [".prettiercache"]
     },
+    "//#prettier:fix": {
+      "dependsOn": ["^prettiercache"]
+    },
     "build": {
       "dependsOn": ["^topo"]
     },
@@ -14,9 +17,6 @@
     "prettier": {
       "inputs": ["**/*.{js,mjs,ts,tsx,md,mdx,json,yml,css}"],
       "outputs": [".prettiercache"]
-    },
-    "prettier:fix": {
-      "dependsOn": ["^prettier"]
     },
     "test": {
       "dependsOn": ["^topo"]

@@ -1,90 +1,41 @@
 /**
- * @fileoverview ESLint Flat Configuration For `Application` Package
+ * @fileoverview ESLint flat configuration for the `@legis-link/website` package
  */
 
-import { FlatCompat } from '@eslint/eslintrc';
-import { tsFlatConfigs, tsLanguageOptions, typedTsOnly } from '@legis-link/eslint-config';
-import { importX } from 'eslint-plugin-import-x';
+import next from '@next/eslint-plugin-next';
 import * as mdx from 'eslint-plugin-mdx';
 import react from 'eslint-plugin-react';
-import tseslint from 'typescript-eslint';
+import * as hooks from 'eslint-plugin-react-hooks';
 
 import baseConfig from '../../eslint.config.js';
 
-const compat = new FlatCompat();
-
-const compatConfig = compat.config({
-  extends: [
-    // https://github.com/vercel/next.js/discussions/49337
-    'plugin:@next/eslint-plugin-next/core-web-vitals',
-    // https://github.com/facebook/react/issues/28313
-    'plugin:react-hooks/recommended',
-  ],
-});
-
 /**
- * ESLint Flat Configuration For `Application` Package
- *
- * Extends The Base ESLint Configuration With Rules And Settings Tailored For The `Application` Package, Enforcing Code
- * Quality And Consistency.
- *
- * @satisfies {import('typescript-eslint').ConfigArray}
+ * ESLint flat configuration for the `@legis-link/website` package
+ * @remarks Extends the base ESLint configuration with rules and settings tailored for the package.
  */
-export default tseslint.config(
-  ...baseConfig,
-  ...tseslint.configs.recommended,
-  ...typedTsOnly,
-  importX.flatConfigs.typescript,
-  tsLanguageOptions,
-  { ignores: ['pages/en/blog/**/*.{md,mdx}/**', 'public'] },
+export default baseConfig.concat([
+  react.configs.flat['jsx-runtime'],
+  hooks.configs.flat['recommended-latest'],
+  next.configs['core-web-vitals'],
+  mdx.flatCodeBlocks,
   {
-    files: ['**/*.{js,mjs,ts,tsx,md,mdx}'],
-    extends: [react.configs.flat['jsx-runtime'], ...compatConfig],
+    ignores: ['pages/en/blog/**/*.{md,mdx}/**', 'public', 'next-env.d.ts'],
+  },
+  {
+    ignores: ['**/*.{md,mdx}', '**/*.{md,mdx}/**'],
+    languageOptions: {
+      parserOptions: {
+        project: './tsconfig.json',
+        tsconfigRootDir: import.meta.dirname,
+      },
+    },
+    rules: {
+      '@typescript-eslint/consistent-type-imports': 'error',
+    },
+  },
+  {
     settings: { react: { version: 'detect' } },
     rules: {
-      /*================================================== Disabled ==================================================*/
-      '@next/next/no-duplicate-head': 'off',
-
-      '@typescript-eslint/no-require-imports': 'off',
-
-      'import-x/no-duplicates': 'off',
-    },
-  },
-  {
-    files: ['**/*.{md,mdx}'],
-    extends: [mdx.flat],
-    processor: mdx.createRemarkProcessor({ lintCodeBlocks: true }),
-    rules: {
-      /*================================================== Disabled ==================================================*/
-      'no-irregular-whitespace': 'off',
-
-      '@next/next/no-img-element': 'off',
-
-      /*========================================== @next/eslint-plugin-next ==========================================*/
-      '@next/next/no-html-link-for-pages': ['error', 'pages/'],
-    },
-  },
-  {
-    files: ['**/*.{mdx,tsx}'],
-    rules: {
-      /*================================================== Disabled ==================================================*/
-      'react/no-unescaped-entities': 'off',
-
-      /*=================================================== ESLint ===================================================*/
-      'no-restricted-syntax': [
-        'error',
-        {
-          selector: "ImportDeclaration[source.value='react'][specifiers.0.type='ImportDefaultSpecifier']",
-          message:
-            'Default React import not allowed since we use the TypeScript jsx-transform. If you need a global type that collides with a React named export (such as `MouseEvent`), try using `globalThis.MouseHandler`',
-        },
-        {
-          selector: "ImportDeclaration[source.value='react'] :matches(ImportNamespaceSpecifier)",
-          message: 'Named * React import is not allowed. Please import what you need from React with Named Imports',
-        },
-      ],
-
-      /*============================================ eslint-plugin-react =============================================*/
       'react/function-component-definition': [
         'error',
         {
@@ -92,8 +43,28 @@ export default tseslint.config(
           unnamedComponents: 'arrow-function',
         },
       ],
+
+      /*================================================== Disabled ==================================================*/
+      'react/no-unescaped-entities': 'off', // Allow unescaped entities in JSX (e.g., apostrophes)
     },
   },
-  mdx.flatCodeBlocks,
-  ...tsFlatConfigs()
-);
+  {
+    files: ['**/*.{md,mdx}/**'],
+    rules: {
+      /*================================================== Disabled ==================================================*/
+      '@typescript-eslint/no-require-imports': 'off', // Markdown files may contain require imports
+    },
+  },
+  {
+    ...mdx.flat,
+    processor: mdx.createRemarkProcessor({ lintCodeBlocks: true }),
+    rules: {
+      '@next/next/no-html-link-for-pages': ['error', 'apps/site/pages/'],
+
+      /*================================================== Disabled ==================================================*/
+      'no-irregular-whitespace': 'off', // Markdown files may contain non-breaking spaces
+
+      '@next/next/no-img-element': 'off', // Markdown files may contain images
+    },
+  },
+]);
